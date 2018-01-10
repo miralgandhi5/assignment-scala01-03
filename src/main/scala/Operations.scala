@@ -19,7 +19,6 @@ object Operations {
     reverse(fibonacci(position, 0, 1, List[Int]()))
   }
 
-
   def addElementsOfTwoList(inputListOne: List[Int], inputListTwo: List[Int]): List[Int] = {
 
     val listWithPairs = inputListOne.zip(inputListTwo)
@@ -48,20 +47,18 @@ object Operations {
 
   def findKthElement(inputList: List[Int], pos: Int): Int = {
 
-      inputList match {
-        case head :: tail =>
-          pos match {
-            case 0 => head
-            case x if x > 0 => findKthElement(tail, pos - 1)
+    inputList match {
+      case head :: tail =>
+        pos match {
+          case 0 => head
+          case x if x > 0 => findKthElement(tail, pos - 1)
 
-          }
-        case Nil => -1
-      }
-
+        }
+      case Nil => -1
+    }
 
 
   }
-
 
   def length(inputList: List[Int]): Int = {
     def listLength(inputList: List[Int], pos: Int): Int = {
@@ -80,6 +77,7 @@ object Operations {
       inputList match {
         case Nil => outputList
         case head :: tail => reverseList(tail, head :: outputList)
+        case _ => outputList
       }
     }
 
